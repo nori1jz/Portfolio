@@ -62,6 +62,28 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'dotenv-rails'
+
+gem 'bootstrap', '~> 4.5'
+gem 'jquery-rails'
+
+gem "refile", require: "refile/rails", github: 'manfe/refile'
+gem "refile-mini_magick"
+
+
+gem 'rubocop', require:false
+gem 'rubocop-rails', require:false
+
+# Run against the last stable release in 3.9.x, see the `main` branch
+# for instructions for the current release of `rspec-rails`.
+group :development, :test do
+  gem 'rspec-rails', '~> 3.9.1'
+end
+
+gem 'devise'
+
+
+
+gem 'dotenv-rails'
 group :production do
   gem 'mysql2'
 end

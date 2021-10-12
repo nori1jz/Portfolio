@@ -26,7 +26,8 @@ Quick D.D.P（Delivery Date & Price)
 日々の営業活動で忙しい溶材や工具などの産業機械を扱う小売店の営業マンが、商品の金額、納期を確認したいときに利用する。
 
 ## 設計書
-
+ER図→https://app.diagrams.net/?client=1
+画面遷移図→https://app.diagrams.net/?client=1
 
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1linnBuLd1Q8CmhertvKGZWJ1ka6Ga0gwUc-rR55Rpos/edit#gid=0
