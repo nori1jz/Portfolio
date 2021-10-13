@@ -1,0 +1,71 @@
+<header>
+  <nav class="navbar navbar-expand navbar-light" style="background-color:orange">
+    <div class="container">
+      <%= link_to root_path do%>
+        <span class="navbar-brand">QuickDDP</span>
+      <% end %>
+
+
+      <div class="">
+        <ul class="navbar-nav ml-auto">
+          <% if admin_signed_in? %>
+            <%= link_to admin_makers_path do%>
+             <span class="fas fa-book-open">お問い合わせ一覧</span>
+            <% end %>
+            <%= link_to admin_items_path do%>
+             <span class="fas fa-home">商品一覧</span>
+            <% end %>
+            <%= link_to admin_customers_path do%>
+             <span class="fas fa-users">会員一覧</span>
+            <% end %>
+            <%= link_to admin_makers_path do%>
+             <span class="fas fa-book-open">取扱メーカー</span>
+            <% end %>
+            <%= link_to admin_genres_path do%>
+             <span class="fas fa-book-open">ジャンル一覧</span>
+            <% end %>
+            <%= link_to destroy_admin_session_path, method: :delete do%>
+             <span class="fas fa-sign-out-alt">Logout</span>
+            <% end %>
+           
+           <% elsif customer_signed_in? %>
+             <span class="name">ようこそ、<%= current_customer.last_name %>さん！</span>
+            <%= link_to public_makers_path do%>
+             <span class="fas fa-book-open">取扱メーカー</span>
+            <% end %>
+            <%= link_to public_items_path do %>
+             <span class="fas fa-cookie-bite">商品一覧</span>
+            <% end %>
+            <%= link_to public_customer_path(current_customer) do %>
+             <span class="fas fa-user ">マイページ</span>
+            <% end %>
+            <%= link_to new_public_contact_path do%>
+             <span class="fas fa-book-open">お問い合わせ</span>
+            <% end %>
+            <%= link_to destroy_customer_session_path, method: :delete do %>
+             <span class="fas fa-sign-out-alt">ログアウト</span>
+            <% end %>
+          <% else %>
+            <%= link_to public_homes_about_path do%>
+             <span class="fas fa-home">About</span>
+            <% end %>
+            <%= link_to public_makers_path do%>
+             <span class="fas fa-book-open">取扱メーカー</span>
+            <% end %>
+            <%= link_to public_items_path do%>
+             <span class="fas fa-link">商品一覧</span>
+            <% end %>
+            <%= link_to new_public_contact_path do%>
+             <span class="fas fa-book-open">お問い合わせ</span>
+            <% end %>
+            <%= link_to new_customer_registration_path do%>
+             <span class="fas fa-user-plus">新規登録</span>
+            <% end %>
+            <%= link_to new_customer_session_path do%>
+             <span class="fas fa-sign-in-alt">ログイン</span>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>

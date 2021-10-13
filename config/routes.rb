@@ -25,6 +25,8 @@ Rails.application.routes.draw do
      resources :items, only: [:index, :show]
      resources :makers, only: [:index, :show]
      resources :contacts, only: [:new, :create]
+     resources :customers, only: [:show]
+     get 'homes/about' => 'homes#about'
      post 'contacts/confirm' => 'contacts#confirm', as: 'confirm'
      post 'contacts/back' => 'contacts#back', as: 'back'
      get  'done' => 'contacts#done', as: 'done'
