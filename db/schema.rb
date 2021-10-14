@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_12_203657) do
+ActiveRecord::Schema.define(version: 2021_10_14_192854) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -81,10 +81,12 @@ ActiveRecord::Schema.define(version: 2021_10_12_203657) do
   end
 
   create_table "maker_genres", force: :cascade do |t|
-    t.integer "maker_id", null: false
-    t.integer "genre_id", null: false
+    t.integer "maker_id"
+    t.integer "genre_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["genre_id"], name: "index_maker_genres_on_genre_id"
+    t.index ["maker_id"], name: "index_maker_genres_on_maker_id"
   end
 
   create_table "makers", force: :cascade do |t|
