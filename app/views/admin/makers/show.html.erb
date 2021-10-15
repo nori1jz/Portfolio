@@ -1,1 +1,51 @@
-<h2>メーカー詳細</h2>
+<div class="container my-5">
+  <div class="row pl-5">
+    <h4>メーカー詳細</h4>
+  </div>
+
+  <div class = "row mt-4 justify-content-center">
+      <div class = "col-sm-3"></div>
+
+      <div class = "col-sm-5">
+          <table class="table table-borderless">
+              <tbody>
+                  <tr>
+                    <td>メーカー名</td>
+                    <td><%= @maker.name %></td>
+                  </tr>
+                  <tr>
+                    <td>電話番号</td>
+                    <td><%= @maker.telephone_number %></td>
+                  </tr>
+                  <tr>
+                    <td>FAX番号</td>
+                    <td><%= @maker.fax_number %></td>
+                  </tr>
+                  <tr>
+                    <td>メールアドレス</td>
+                    <td><%= @maker.email %></td>
+                  </tr>
+
+                  <tr>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <% if @maker.is_active == true %>
+                  <tr>
+                    <td class="col-3">取扱ステータス</td>
+                    <td class="col-3 fs-5 fw-bold" style="color:green">取扱有</td>
+                  </tr>
+                  <% elsif @maker.is_active == false %>
+                  <tr>
+                    <td class="col-3">取扱ステータス</td>
+                    <td class="col-3 fs-5" style="color:gray">取扱無</td>
+                  </tr>
+                  <% end %>
+                  <tr>
+                  <th class=botann colspan="2"><%= link_to "編集する", edit_admin_maker_path(@maker),class:"btn btn-success"%></th>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>

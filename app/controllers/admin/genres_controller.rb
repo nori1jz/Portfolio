@@ -25,8 +25,6 @@ class Admin::GenresController < ApplicationController
     redirect_to admin_genres_path, notice: 'Genre was successfully updated.'
   end
 
-  def destroy
-  end
 
   private
   def admin_genre_params

@@ -1,1 +1,50 @@
-<h2>メーカー新規登録</h2>
+<div class="container">
+  <p class="field">メーカー新規登録</p>
+  <div class="field">
+  <%= form_with model: @maker,url: admin_makers_path, local: true do |f| %>
+
+    <div class="field">
+      <div class="col-3"></div>
+      <div class="col-2 fs-5"><%= f.label :name, "メーカー名" %></div>
+      <div class="col-5"><%= f.text_field :name,  size: 39, placeholder: "HIKOKI" %></div>
+    </div>
+
+    <div class="field">
+      <div class="col-3"></div>
+      <div class="col-2 fs-5"><%= f.label :telephone_number, "電話番号" %></div>
+      <div class="col-5"><%= f.text_field :telephone_number,  size: "41x7", placeholder: "00000000000"%></div>
+    </div>
+
+    <div class="field">
+       <div class="col-3"></div>
+       <div class="col-2 fs-5"><%=f.label :fax_number, "FAX番号" %></div>
+       <div class="col-5"><%= f.text_field :fax_number,  size: 39, placeholder: "00000000000" %></div>
+    </div>
+
+    <div class="field">
+       <div class="col-3"></div>
+       <div class="col-2 fs-5"><%= f.label:email, "メールアドレス" %></div>
+       <div class="col-5"><%= f.email_field :email, autocomplete: "email", placeholder:"example@example.com" %></div>
+    </div>
+
+    <div class="field">
+      <div class="col-3"></div>
+      <div class="col-2 fs-5"><%=f.label:"取扱ステータス"%></div>
+      <div  class="col-1">
+       <%= f.radio_button :is_active, "取扱有",checkd: true %><%= f.label :is_active, "取扱有", value: :true %>
+      <!--</div>-->
+
+    <!--<div  class="field">-->
+       <%= f.radio_button :is_active, "" %><%= f.label :is_active, "取扱無",value: :false %>
+      </div>
+    </div>
+
+
+    <div class="field">
+       <%= f.submit "　新規登録　", class: "btn btn-sm btn-success mt-3 mb-5" %>
+    </div>
+  <% end %>
+
+  </div>
+ </div>
+</div>

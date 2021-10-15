@@ -1,1 +1,42 @@
-<h2>メーカー編集</h2>
+<div class="container">
+  <p class="fs-3 mt-3 ms-4">メーカー編集</p>
+  <div class>
+  <%= form_with model: @maker,url: admin_maker_path(@maker), local: true  do |f| %>
+  
+    <div class="field">
+      <%= f.label "メーカー名" %>
+      <%= f.text_field :name %>
+    </div>
+    
+    <div class="field">
+      <%= f.label "電話番号" %>
+      <%= f.text_field :telephone_number %>
+    </div>
+    
+    <div class="field">
+      <%= f.label "FAX番号" %>
+      <%= f.text_field :fax_number %>
+    </div>
+
+    <div class="field">
+       <%=f.label "メールアドレス" %>
+       <%= f.text_field :email %>
+    </div>
+    
+    <div class="field">
+      <%=f.label "販売ステータス" %>
+        <%= f.radio_button :is_active, "取扱有",checked: true %>
+        <%= f.label :is_active, "取扱有", value: :true %>
+      
+        <%= f.radio_button :is_active, :false %>
+        <%= f.label :is_active, "取扱無",value: :false %>
+      
+    </div>
+    
+    <div class>
+      <%= f.submit "変更を保存", class: "btn btn-sm btn-success" %>
+    </div>
+   
+  <% end %>
+  </div>
+</div>
