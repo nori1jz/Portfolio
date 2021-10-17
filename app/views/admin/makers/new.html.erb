@@ -30,12 +30,12 @@
     <div class="field">
       <div class="col-3"></div>
       <div class="col-2 fs-5"><%=f.label:"取扱ステータス"%></div>
-      <div  class="col-1">
-       <%= f.radio_button :is_active, "取扱有",checkd: true %><%= f.label :is_active, "取扱有", value: :true %>
-      <!--</div>-->
-
-    <!--<div  class="field">-->
-       <%= f.radio_button :is_active, "" %><%= f.label :is_active, "取扱無",value: :false %>
+      <div  class="col-5">
+       <%= f.radio_button :is_active, "取扱有",checkd: true %>
+       <%= f.label :is_active, "取扱有", value: :true %>
+       
+       <%= f.radio_button :is_active, "" %>
+       <%= f.label :is_active, "取扱無",value: :false %>
       </div>
     </div>
 
