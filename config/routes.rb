@@ -1,6 +1,20 @@
 Rails.application.routes.draw do
   
   root  'public/homes#top'
+ 
+  # namespace :public do
+  #   get 'unsubscribe' => 'homes#unsubscribe', as: 'confirm_unsubscribe'
+  #   patch ':id/withdraw' => 'homes#withdraw', as: 'withdraw_customer'
+  #   put 'withdraw' => 'customers#withdraw'
+     resource :customer, only: [:show, :edit, :update] do
+       collection do
+         get 'unsubscribe' => 'homes#unsubscribe', as: 'confirm_unsubscribe'
+         patch 'withdraw' => 'homes#withdraw', as: 'withdraw_customer'
+          put 'withdraw' => 'customers#withdraw'
+    
+       end
+     end
+  
   
   devise_for :customers, controllers: {
   sessions:      'customers/sessions',
@@ -25,7 +39,7 @@ Rails.application.routes.draw do
      resources :items, only: [:index, :show]
      resources :makers, only: [:index, :show]
      resources :contacts, only: [:new, :create]
-     resources :customers, only: [:show]
+     resources :customers, only: [:show, :edit]
      get 'homes/about' => 'homes#about'
      post 'contacts/confirm' => 'contacts#confirm', as: 'confirm'
      post 'contacts/back' => 'contacts#back', as: 'back'
