@@ -27,7 +27,7 @@
             <%= link_to destroy_admin_session_path, method: :delete do%>
              <span class="fas fa-sign-out-alt">Logout</span>
             <% end %>
-           
+
            <% elsif customer_signed_in? %>
              <span class="name">ようこそ、<%= current_customer.last_name %>さん！</span>
             <%= link_to public_makers_path do%>
