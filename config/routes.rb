@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   root  'public/homes#top'
 
 
-
   devise_for :customers, controllers: {
   sessions:      'customers/sessions',
   passwords:     'customers/passwords',

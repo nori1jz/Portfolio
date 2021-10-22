@@ -16,7 +16,18 @@
 @import "bootstrap";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+.container-login {
+    @extnd .container-fluid;
+    max-width: 576px;
+    // padding: 2rem;
+    margin: 100px ;
 
+}
+
+.card-body {
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+
+}
 .wrapper{
     min-height: 100vh;
     position: relative;/*相対位置*/

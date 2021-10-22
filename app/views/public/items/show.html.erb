@@ -1,1 +1,71 @@
-<h2>商品詳細</h2>
+<div class="container my-5">
+  <div class="row pl-5">
+      <h4>商品詳細</h4>
+  </div>
+
+  <div class = "row mt-4 justify-content-center">
+      <div class = "col-sm-3">
+        <%= attachment_image_tag @item, :image, size: "250x250", format: 'jpeg' %>
+      </div>
+
+      <div class = "col-sm-5">
+          <table class="table table-borderless">
+              <tbody>
+                  <tr>
+                    <td>メーカー名</td>
+                    <td><%= @item.maker.name %></td>
+                  </tr>
+                  <tr>
+                    <td>ジャンル</td>
+                    <td><%= @item.genre.name %></td>
+                  </tr>
+                  <tr>
+                    <td>商品名</td>
+                    <td><%= @item.name %></td>
+                  </tr>
+                  <tr>
+                    <td>商品説明</td>
+                    <td><%= @item.detail %></td>
+                  </tr>
+                  <tr>
+                    <td>税抜価格　(税込価格)</td>
+                    <td><%= @item.price %>（<%= (@item.price * 1.1).floor %>）円</td>
+                  </tr>
+                  <tr>
+                    <td>定価</td>
+                    <td><%= @item.user_price %></td>
+                  </tr>
+                  <tr>
+                    <td>在庫ステータス</td>
+                     <% if @item.is_active == true %>
+                    <td style="color:green;">在庫品</td>
+                     <% elsif %>
+                    <td style="color:gray;">取り寄せ品</td>
+                     <% end %>
+                  </tr>
+              </tbody>
+          </table>
+
+      </div>
+  </div>
+              <div class="row">
+               <div class = "col-sm-5"></div>
+                  <tr>
+                    <td>（在庫品は通常翌日配達です）</td>
+                  </tr>
+              </div>
+              <div class="row">
+               <div class ="col-sm-5"></div>
+                  <tr>
+                    <td>※欠品時を除く</td>
+                  </tr>
+              </div>    
+              <div class="row"> 
+               <div class="col-sm-5"></div>
+                  <tr>
+                    <td>※取り寄せ品は担当部署へ<%= link_to "お問い合わせ", new_public_contact_path %>ください</td>
+                  </tr>
+              </div>      
+
+
+</div>

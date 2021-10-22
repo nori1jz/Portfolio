@@ -9,8 +9,8 @@
     </div>
     
     <div class="field">
-      <%= f.label :name, "メーカー名" %>
-      <%= f.text_field :name %>
+      <%= f.label :makers, "メーカー名" %>
+      <%= f.collection_select(:maker_id, @maker, :id, :name) %>
     </div>
     
     <div class="field">

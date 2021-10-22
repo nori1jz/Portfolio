@@ -1,0 +1,35 @@
+<div class="container">
+
+  <div class="row justify-content-center mt-4">
+    <div class="col-10 row justify-content-between">
+      <span class="bg-info font-weight-bold fs-5 col-2 text-center font-monospace pt-2">メーカー一覧</span>
+    </div>
+  </div>
+
+  <div class="row justify-content-center mt-3">
+    <div class="col-10">
+      <table class="table table-hover">
+        <thead class="bg-light">
+          <tr>
+            <th>メーカーID</th>
+            <th>メーカー名</th>
+            <th>ステータス</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @makers.each do |maker| %>
+          <tr>
+            <td><%= maker.id %></td>
+            <td><%= link_to "#{maker.name}", public_maker_path(maker), :style => "color: black;text-decoration: underline" %></td>
+            <% if maker.is_active == true %>
+            <td style="color:green;">取扱有</td>
+            <% elsif %>
+            <td style="color:gray;">取扱無</td>
+            <% end %>
+           </tr>
+           <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
