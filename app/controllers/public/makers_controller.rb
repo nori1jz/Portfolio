@@ -5,6 +5,7 @@ class Public::MakersController < ApplicationController
   end  
   
   def show
-    
+    @maker = Maker.find(params[:id])
+    @items = Item.where(maker_id:@maker.id)
   end  
 end
