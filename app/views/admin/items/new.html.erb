@@ -3,6 +3,7 @@
   <p class="field">商品新規登録</p>
   <div class="field">
   <%= form_with model: @item,url: admin_items_path, local: true do |f| %>
+    <%= render 'layouts/error_messages', model: f.object %>
 
     <div class="field">
       <div class="col-3"></div>

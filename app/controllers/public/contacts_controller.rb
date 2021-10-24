@@ -1,5 +1,5 @@
 class Public::ContactsController < ApplicationController
-  
+
   def new
     @contact = current_customer.contacts.new
     @contact.company = current_customer.company
@@ -14,7 +14,7 @@ class Public::ContactsController < ApplicationController
       render :new
     end
   end
-  
+
   # 入力内容に誤りがあった場合、
   # 入力内容を保持したまま前のページに戻る.
   def back
