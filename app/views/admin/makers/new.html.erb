@@ -2,6 +2,7 @@
   <p class="field">メーカー新規登録</p>
   <div class="field">
   <%= form_with model: @maker,url: admin_makers_path, local: true do |f| %>
+  <%= render 'layouts/error_messages', model: f.object %>
 
     <div class="field">
       <div class="col-3"></div>

@@ -16,12 +16,21 @@
 @import "bootstrap";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+
 .container-login {
     @extnd .container-fluid;
     max-width: 576px;
-    // padding: 2rem;
-    margin: 100px ;
+    margin: 200px 600px ;
+}
 
+.card {
+    @extnd .container-fluid;
+    margin: 10px ;
+    size: 200px 200px ;
+}
+
+.form-control{
+    background-color: floralwhite ;
 }
 
 .card-body {

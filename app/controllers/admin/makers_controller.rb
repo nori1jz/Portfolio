@@ -9,9 +9,12 @@ class Admin::MakersController < ApplicationController
   end
 
   def create
-    maker = Maker.new(admin_maker_params)
-    maker.save
-    redirect_to admin_maker_path(maker[:id])
+    @maker = Maker.new(admin_maker_params)
+    if @maker.save
+      redirect_to admin_maker_path(@maker)
+    else
+      render :new
+    end
   end
 
   def edit
@@ -30,7 +33,7 @@ class Admin::MakersController < ApplicationController
 
   private
   def admin_maker_params
-    params.require(:maker).permit(:name, :telephone_number, :email, :fax_number, :is_active)
+    params.require(:maker).permit(:maker_id, :name, :telephone_number, :email, :fax_number, :is_active)
   end
 
 

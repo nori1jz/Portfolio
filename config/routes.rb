@@ -25,7 +25,13 @@ Rails.application.routes.draw do
   namespace :public do
      resources :items, only: [:index, :show]
      resources :makers, only: [:index, :show]
-     resources :contacts, only: [:new, :create]
+     resources :contacts, only: [:new, :create] do
+       collection do
+         post 'confirm', to: 'contacts#confirm', as: 'confirm'
+         post 'back', to: 'contacts#back', as: 'back'
+       end
+       get 'done', to: 'contacts#done', as: 'done'
+     end
      resources :customers, only: [:show, :edit, :update] do
        member do
          get :unsubscribe
@@ -41,6 +47,6 @@ Rails.application.routes.draw do
 
 
 
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
