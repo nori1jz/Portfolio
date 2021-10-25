@@ -3,13 +3,14 @@
    <p id="notice"><%= flash[:notice] %></p>
     <div class="row">
       <div class="col-1"></div>
-      　<div class="col-3">
+        <div class="col-3">
           <%= form_with model: @genre,url: admin_genres_path, local: true do |f| %>
+          <%= render 'layouts/error_messages', model: f.object %>
             <%= f.label:ジャンル名 %>
             <%= f.text_field :name,  placeholder: "ディスクグラインダ" %>
             <%= f.submit "　新規登録　", class: "btn btn-sm btn-success ms-5 fs-5" %>
           <% end %>
-      　</div>
+        </div>
     </div>
 
     <div class="row">

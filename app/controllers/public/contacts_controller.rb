@@ -1,5 +1,5 @@
 class Public::ContactsController < ApplicationController
-
+  before_action :authenticate_customer!
   def new
     @contact = current_customer.contacts.new
     @contact.company = current_customer.company

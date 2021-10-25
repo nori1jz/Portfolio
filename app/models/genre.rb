@@ -5,5 +5,6 @@ class Genre < ApplicationRecord
   has_many :maker_genres
   accepts_nested_attributes_for :maker_genres 
   # ↑ジャンルを保存するとmaker_genresも更新される
+  validates :name, presence: true
 
 end
