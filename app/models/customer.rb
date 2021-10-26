@@ -4,6 +4,11 @@ class Customer < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :contacts
+  has_many :favorites, dependent: :destroy
+  has_many :favored_items, through: :favorites, source: :item
+  def already_favorited?(item)
+    self.favorites.exists?(item_id: item.id)
+  end
   validates :email, presence: true
   validates :company, presence: true
   validates :last_name, presence: true

@@ -23,7 +23,9 @@ Rails.application.routes.draw do
   end
 
   namespace :public do
-     resources :items, only: [:index, :show]
+     resources :items, only: [:index, :show] do
+       resource :favorites, only: [:create, :destroy]
+     end   
      resources :makers, only: [:index, :show]
      resources :contacts, only: [:new, :create] do
        collection do
@@ -37,15 +39,15 @@ Rails.application.routes.draw do
          get :unsubscribe
          patch :withdraw
        end
+       collection do
+         get :favorites
+       end
      end
      get 'homes/about' => 'homes#about'
      post 'contacts/confirm' => 'contacts#confirm', as: 'confirm'
      post 'contacts/back' => 'contacts#back', as: 'back'
      get  'done' => 'contacts#done', as: 'done'
   end
-
-
-
 
 end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
