@@ -1,25 +1,20 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 #deviseが認証用のURLなどを生成するのに必要になる
-  config.action_mailer.default_url_options = {:host => 'http://http://35.76.10.241' }
+  # config.action_mailer.default_url_options = {:host => 'http://http://35.76.10.241' }
   #送信方法を指定（この他に:sendmail/:file/:testなどがあります)
   config.action_mailer.delivery_method = :smtp
+  config.action_mailer.raise_delivery_errors = true
+
   #送信方法として:smtpを指定した場合は、このconfigを使って送信詳細の設定を行います
   config.action_mailer.smtp_settings = {
     #gmail利用時はaddress,domain,portは下記で固定
     port: 587,
     address: 'smtp.gmail.com',
-    domain: 'smtp.gmail.com',
+    domain: 'gmail.com',
     user_name: ENV['SMTP_USERNAME'],
     password: ENV['SMTP_PASSWORD'],
     enable_starttls_auto: true
-
-    #gmailのユーザアカウント（xxxx@gmail.com)※念のため、credentials.yml.enc行き
-    # user_name: Rails.application.credentials.gmail[:user_name],
-    #gmail２段階認証回避のためにアプリケーションでの利用パスワードを取得、必ずcredentials.yml.endに設定を！！
-    # password: Rails.application.credentials.gmail[:password],
-    #パスワードをBase64でエンコード
-    # authentication: :login
   }
   # Code is not reloaded between requests.
   config.cache_classes = true
