@@ -38,6 +38,7 @@ Rails.application.routes.draw do
        member do
          get :unsubscribe
          patch :withdraw
+         get :favorites
        end
        collection do
          get :favorites

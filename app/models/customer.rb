@@ -5,7 +5,7 @@ class Customer < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :contacts
   has_many :favorites, dependent: :destroy
-  has_many :favored_items, through: :favorites, source: :item
+  has_many :favorite_items, through: :favorites, source: :item
   def already_favorited?(item)
     self.favorites.exists?(item_id: item.id)
   end

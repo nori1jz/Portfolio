@@ -34,13 +34,13 @@
              <span class="fas fa-book-open">取扱メーカー</span>
             <% end %>
             <%= link_to public_items_path do %>
-             <span class="fas fa-cookie-bite">商品一覧</span>
+             <span class="fas fa-solid fa-store">商品一覧</span>
             <% end %>
             <%= link_to public_customer_path(current_customer) do %>
              <span class="fas fa-user ">マイページ</span>
             <% end %>
             <%= link_to new_public_contact_path do%>
-             <span class="fas fa-book-open">お問い合わせ</span>
+             <span class="fas fa-solid fa-envelope">お問い合わせ</span>
             <% end %>
             <%= link_to destroy_customer_session_path, method: :delete do %>
              <span class="fas fa-sign-out-alt">ログアウト</span>

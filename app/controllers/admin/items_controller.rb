@@ -1,6 +1,8 @@
 class Admin::ItemsController < ApplicationController
+   before_action :authenticate_customer!
+
   def index
-    @items = Item.all
+    @items = Item.all.page(params[:page]).per(10)
   end
 
   def new
@@ -15,7 +17,7 @@ class Admin::ItemsController < ApplicationController
      render :new
     end
   end
-  
+
   def show
         @item = Item.find(params[:id])
   end

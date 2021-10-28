@@ -1,8 +1,9 @@
 class Public::CustomersController < ApplicationController
   before_action :authenticate_customer!
- 
+
   def show
     @customer = current_customer
+    @favorites = Favorite.where(customer_id: @customer.id)
   end
 
   def edit
@@ -27,6 +28,12 @@ class Public::CustomersController < ApplicationController
     @customer.update(is_deleted: false)
     reset_session
     redirect_to root_path
+  end
+
+  def favorites
+    # @customer = Customer.find_by(id: params[:id])
+    @favorites = current_customer.favorites
+    # @favorite_items = Item.find(@favorites)
   end
 
   private
