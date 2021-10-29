@@ -28,7 +28,7 @@ class Admin::MakersController < ApplicationController
   end
 
   def index
-    @makers = Maker.all
+    @makers = Maker.page(params[:page]).reverse_order
   end
 
   private
