@@ -1,7 +1,7 @@
 class Public::MakersController < ApplicationController
   
   def index
-    @makers = Maker.all
+    @makers = Maker.page(params[:page]).reverse_order
   end  
   
   def show

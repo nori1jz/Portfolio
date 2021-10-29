@@ -85,9 +85,10 @@ gem 'devise-i18n'
 
 
 
-
 gem 'dotenv-rails'
 group :production do
   gem 'mysql2'
-gem 'kaminari'  
 end
+
+gem 'kaminari','~> 1.2.1'
+
