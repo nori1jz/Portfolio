@@ -28,7 +28,7 @@
                     <td><%= @item.detail %></td>
                   </tr>
                   <tr>
-                    <td>税抜価格　(税込価格)</td>
+                    <td>税抜価格(税込価格)</td>
                     <td><%= @item.price %>（<%= (@item.price * 1.1).floor %>）円</td>
                   </tr>
                   <tr>
@@ -42,6 +42,7 @@
                      <% elsif %>
                     <td style="color:gray;">取り寄せ品</td>
                      <% end %>
+                <% if customer_signed_in? %>
                   <tr><% if @item.favorited_by?(current_customer) %>
                      <td><%= link_to public_item_favorites_path(@item), method: :delete do %>
                       ♥<%= @item.favorites.count %> お気に入り
@@ -54,6 +55,7 @@
                      </td>
                      <% end %>
                   </tr>
+                 <% end %> 
               </tbody>
           </table>
 
