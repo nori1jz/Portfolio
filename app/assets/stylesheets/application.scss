@@ -62,9 +62,8 @@ footer{
 }
 
 .tag-box {
-  background-color: #337ab7;
   font-weight: 500;
-  display: inline;
+  display: flex;
   padding: .2em .6em .3em;
   font-size: 75%;
   font-weight: bold;
@@ -74,4 +73,14 @@ footer{
   white-space: nowrap;
   vertical-align: baseline;
   border-radius: .25em;
+  justify-content: flex-start;
+  gap: 8px;
+  
 }
+
+  .tag-box > div {
+    max-width: 130px;
+    background-color: #337ab7;
+    padding: 4px 8px;
+    border-radius: 2px;
+  }

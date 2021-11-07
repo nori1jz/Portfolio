@@ -4,13 +4,13 @@
   </div>
 
   <div class = "row mt-4 justify-content-center">
-      <div class = "col-sm-3">
+      <div class = "col-sm-6">
         <%= attachment_image_tag @item, :image, size: "270x250", format: 'jpeg' %>
-      <div class= "tag-box">  
+      <div class= "tag-box">
         <% @item.tags.each do |tag| %>
-        <span class="label"><%= tag.name %></span>
+        <div class="label"><%= tag.name %></div>
         <% end %>
-      </div>  
+      </div>
 
       </div>
 
@@ -66,3 +66,4 @@
       </div>
   </div>
 </div>
+

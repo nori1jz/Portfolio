@@ -35,7 +35,13 @@ class Admin::ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
-    @item.update(admin_item_params)
+    if @item.update(admin_item_params)
+      tags = Vision.get_image_data(@item.image)  
+      @item.tags.destroy_all
+      tags.each do |tag|
+      @item.tags.create(name: tag)
+      end
+    end
     redirect_to admin_item_path(@item)
   end
 
