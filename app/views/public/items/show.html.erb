@@ -29,11 +29,11 @@
                   </tr>
                   <tr>
                     <td>税抜価格(税込価格)</td>
-                    <td><%= @item.price %>（<%= (@item.price * 1.1).floor %>）円</td>
+                    <td><%= @item.price.to_s(:delimited) %>（<%= @item.taxin_price.to_s(:delimited) %>）円</td>
                   </tr>
                   <tr>
                     <td>定価</td>
-                    <td><%= @item.user_price %></td>
+                    <td><%= @item.user_price.to_s(:delimited) %></td>
                   </tr>
                   <tr>
                     <td>在庫ステータス</td>
@@ -47,7 +47,7 @@
                      <td><%= link_to public_item_favorites_path(@item), method: :delete do %>
                       ♥<%= @item.favorites.count %> お気に入り
                      <% end %>
-                     </td> 
+                     </td>
                       <% else %>
                      <td><%= link_to public_item_favorites_path(@item), method: :post do %>
                       ♡<%= @item.favorites.count %> お気に入り
@@ -55,7 +55,7 @@
                      </td>
                      <% end %>
                   </tr>
-                 <% end %> 
+                 <% end %>
               </tbody>
           </table>
 
