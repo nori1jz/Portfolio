@@ -45,6 +45,7 @@
             <%= link_to destroy_customer_session_path, method: :delete do %>
              <span class="fas fa-sign-out-alt">ログアウト</span>
             <% end %>
+            <%= render 'searchs/form' %>
           <% else %>
             <%= link_to public_homes_about_path do%>
              <span class="fas fa-home">About</span>

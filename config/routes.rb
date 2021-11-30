@@ -44,6 +44,7 @@ Rails.application.routes.draw do
          get :favorites
        end
      end
+     get '/search', to: 'searchs#search'
      get 'homes/about' => 'homes#about'
      post 'contacts/confirm' => 'contacts#confirm', as: 'confirm'
      post 'contacts/back' => 'contacts#back', as: 'back'

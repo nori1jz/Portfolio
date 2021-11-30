@@ -1,0 +1,7 @@
+<% if @model == 'maker' %>
+  <h3>【Makersモデルの検索結果】検索ワード：<%= @content %></h3>
+  <%= render 'makers/index', makers: @records %>
+<% else @model == 'items' %>
+  <h3>【Itemsモデルの検索結果】検索ワード：<%= @content %></h3>
+    <%= render 'items/index', items: @records %>
+<% end %>

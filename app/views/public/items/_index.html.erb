@@ -1,0 +1,27 @@
+<table>
+    <thead>
+        <tr>
+            <th>商品名</th>
+            <th>タイトル</th>
+            <th>本文</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="item">
+    <% items.each do |item| %>
+      <tr>
+        <td><%= item.name %></td>
+        <td><%= link_to "詳細", public_item_path(item) %></td>
+        <% if post.user == current_user %>
+          <td><%= link_to "編集", edit_post_path(post) %></td>
+          <td><%= link_to "削除", post_path(post), method: :delete, remote: true %></td>
+        <% else %>
+          <td></td>
+          <td></td>
+        <% end %>
+      </tr>
+    <% end %>
+    </tbody>
+</table>
