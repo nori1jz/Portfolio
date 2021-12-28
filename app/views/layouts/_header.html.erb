@@ -4,10 +4,16 @@
       <%= link_to root_path do%>
         <span class="navbar-brand">QuickDDP</span>
       <% end %>
-
-
-      <div class="">
-        <ul class="navbar-nav ml-auto">
+<!-- ハンバーガーメニュー -->
+ <div class="drawer">
+<!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
+   <input type="checkbox" name="navToggle" id="navToggle"　class="nav-toggle">
+<!-- ハンバーガーメニューのアイコン -->
+   <label for="navToggle" class="btn-burger">
+    <span class="icon"></span>
+   </label>
+      <nav class="nav">
+        <ul class="nav-list">
           <% if admin_signed_in? %>
             <%#= link_to admin_makers_path do% 　　後ほど作成します>
              <span class="fas fa-book-open">お問い合わせ一覧</span>
@@ -66,6 +72,7 @@
             <% end %>
           <% end %>
         </ul>
-      </div>
+      </nav>
     </div>
   </nav>
+ </header> 
