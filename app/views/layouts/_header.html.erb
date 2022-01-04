@@ -19,56 +19,56 @@
              <span class="fas fa-book-open">お問い合わせ一覧</span>
             <%# end %>
             <%= link_to admin_items_path do%>
-             <span class="fas fa-home">商品一覧</span>
+             <li class="fas fa-home">商品一覧</li>
             <% end %>
             <%= link_to admin_customers_path do%>
-             <span class="fas fa-users">会員一覧</span>
+             <li class="fas fa-users">会員一覧</li>
             <% end %>
             <%= link_to admin_makers_path do%>
-             <span class="fas fa-book-open">取扱メーカー</span>
+             <li class="fas fa-book-open">取扱メーカー</li>
             <% end %>
             <%= link_to admin_genres_path do%>
-             <span class="fas fa-book-open">ジャンル一覧</span>
+             <li class="fas fa-book-open">ジャンル一覧</li>
             <% end %>
             <%= link_to destroy_admin_session_path, method: :delete do%>
-             <span class="fas fa-sign-out-alt">Logout</span>
+             <li class="fas fa-sign-out-alt">Logout</li>
             <% end %>
 
            <% elsif customer_signed_in? %>
-             <span class="name">ようこそ、<%= current_customer.last_name %>さん！</span>
+             <li class="name">ようこそ、<%= current_customer.last_name %>さん！</li>
             <%= link_to public_makers_path do%>
-             <span class="fas fa-book-open">取扱メーカー</span>
+             <li class="fas fa-book-open">取扱メーカー</li>
             <% end %>
             <%= link_to public_items_path do %>
-             <span class="fas fa-solid fa-store">商品一覧</span>
+             <li class="fas fa-solid fa-store">商品一覧</li>
             <% end %>
             <%= link_to public_customer_path(current_customer) do %>
-             <span class="fas fa-user ">マイページ</span>
+             <li class="fas fa-user ">マイページ</li>
             <% end %>
             <%= link_to new_public_contact_path do%>
-             <span class="fas fa-solid fa-envelope">お問い合わせ</span>
+             <li class="fas fa-solid fa-envelope">お問い合わせ</li>
             <% end %>
             <%= link_to destroy_customer_session_path, method: :delete do %>
-             <span class="fas fa-sign-out-alt">ログアウト</span>
+             <li class="fas fa-sign-out-alt">ログアウト</li>
             <% end %>
           <% else %>
             <%= link_to public_homes_about_path do%>
-             <span class="fas fa-home">About</span>
+             <li class="fas fa-home">About</li>
             <% end %>
             <%= link_to public_makers_path do%>
-             <span class="fas fa-book-open">取扱メーカー</span>
+             <li class="fas fa-book-open">取扱メーカー</li>
             <% end %>
             <%= link_to public_items_path do%>
-             <span class="fas fa-link">商品一覧</span>
+             <li class="fas fa-link">商品一覧</li>
             <% end %>
             <%= link_to new_public_contact_path do%>
-             <span class="fas fa-book-open">お問い合わせ</span>
+             <li class="fas fa-book-open">お問い合わせ</li>
             <% end %>
             <%= link_to new_customer_registration_path do%>
-             <span class="fas fa-user-plus">新規登録</span>
+             <li class="fas fa-user-plus">新規登録</li>
             <% end %>
             <%= link_to new_customer_session_path do%>
-             <span class="fas fa-sign-in-alt">ログイン</span>
+             <li class="fas fa-sign-in-alt">ログイン</li>
             <% end %>
           <% end %>
         </ul>

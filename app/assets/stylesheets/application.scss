@@ -67,7 +67,7 @@
     background-color: #444;
     border-radius: 2px;
     display: block;
-  　content: '';
+  　content: "";
     cursor: pointer;
     margin: auto;
 }
@@ -107,7 +107,7 @@
 /*表示されるメニューの中身*/
 .nav {
     // background-color: #5c55e7;
-    
+
 }
 .nav-list a {
     display: block;
@@ -137,12 +137,12 @@
 header {
     padding: 30px 0 0;
 }
-// .logo {
-//     width: auto;
-//     margin: 0 0 20px;
-//     padding: 0;
-//     text-align: center;
-// }
+.logo {
+    width: auto;
+    margin: 0 0 20px;
+    padding: 0;
+    text-align: center;
+}
 .nav-toggle:checked ~ .nav .nav-list {
     display: none;
 }
